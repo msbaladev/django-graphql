@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-5)%34kk5o@u*tv+tzd)=_^w-@(*@461+4+n*cfpa1p!5#1s(4$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django-graphql.onrender.com']
 
 
 
