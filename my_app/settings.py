@@ -58,11 +58,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'REST_API',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.github',
-    'social_django',
+   
+   
     'graphene_django',
     
 ]
@@ -76,7 +73,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware',
+   
     'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
@@ -129,13 +126,25 @@ WSGI_APPLICATION = 'my_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'API',                      
+#         'USER': 'postgres',
+#         'PASSWORD': 'iness123',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'API',                      
-        'USER': 'postgres',
-        'PASSWORD': 'iness123',
-        'HOST': 'localhost',
+        'NAME': 'koyebdb',                      
+        'USER': 'koyeb-adm',
+        'PASSWORD': '13wqlOYPXprC',
+        'HOST': 'ep-ancient-glade-a12qjarc.ap-southeast-1.pg.koyeb.app',
         'PORT': '5432',
     }
 }

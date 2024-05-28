@@ -23,7 +23,6 @@ from .schema import schema
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('REST_API.urls')),
-    path('accounts/', include('allauth.urls')),
     path('auth/', include('social_django.urls', namespace='social')),
     
     path("graphql/", GraphQLView.as_view(graphiql=True, schema=schema)),
