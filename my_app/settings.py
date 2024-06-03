@@ -25,9 +25,13 @@ SECRET_KEY = 'django-insecure-5)%34kk5o@u*tv+tzd)=_^w-@(*@461+4+n*cfpa1p!5#1s(4$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< HEAD
 ALLOWED_HOSTS = ['*']
 
 CORS_ALLOW_HEADERS = ['*']
+=======
+ALLOWED_HOSTS = ['django-graphql.onrender.com']
+>>>>>>> 8e65d9f8d158e041843ca0cca2942d3ddbc45e67
 
 
 
@@ -153,8 +157,10 @@ DATABASES = {
 }
 
 
+
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
