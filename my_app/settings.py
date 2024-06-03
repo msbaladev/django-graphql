@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-5)%34kk5o@u*tv+tzd)=_^w-@(*@461+4+n*cfpa1p!5#1s(4$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+CORS_ALLOW_HEADERS = ['*']
 
 
 
@@ -59,7 +61,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'REST_API',
    
-   
+    'corsheaders',
     'graphene_django',
     
 ]
@@ -75,6 +77,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
    
     'social_django.middleware.SocialAuthExceptionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 
@@ -191,3 +194,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = False

@@ -16,3 +16,9 @@ class products(models.Model):
     price=models.CharField(max_length=255,null=False)
     quantity=models.CharField(max_length=255,null=False)
     
+    
+    
+class icc(models.Model):
+    category= models.CharField(max_length=254,null=False)
+    qpn= models.CharField(max_length=254,null=False)
+    part_no= models.CharField(max_length=254,null=False)
