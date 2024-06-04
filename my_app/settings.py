@@ -25,13 +25,9 @@ SECRET_KEY = 'django-insecure-5)%34kk5o@u*tv+tzd)=_^w-@(*@461+4+n*cfpa1p!5#1s(4$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-<<<<<<< HEAD
-ALLOWED_HOSTS = ['*']
+CORS_ALLOW_HEADERS = ['127.0.0.1']
 
-CORS_ALLOW_HEADERS = ['*']
-=======
-ALLOWED_HOSTS = ['django-graphql.onrender.com']
->>>>>>> 8e65d9f8d158e041843ca0cca2942d3ddbc45e67
+ALLOWED_HOSTS = ['django-graphql.onrender.com','127.0.0.1']
 
 
 
@@ -133,28 +129,28 @@ WSGI_APPLICATION = 'my_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'API',                      
-#         'USER': 'postgres',
-#         'PASSWORD': 'iness123',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'koyebdb',                      
-        'USER': 'koyeb-adm',
-        'PASSWORD': '13wqlOYPXprC',
-        'HOST': 'ep-ancient-glade-a12qjarc.ap-southeast-1.pg.koyeb.app',
+        'NAME': 'API',                      
+        'USER': 'postgres',
+        'PASSWORD': 'iness123',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'koyebdb',                      
+#         'USER': 'koyeb-adm',
+#         'PASSWORD': '13wqlOYPXprC',
+#         'HOST': 'ep-ancient-glade-a12qjarc.ap-southeast-1.pg.koyeb.app',
+#         'PORT': '5432',
+#     }
+# }
 
 
 
@@ -201,4 +197,9 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOW_CREDENTIALS = False
+# CORS_ALLOW_CREDENTIALS = False
+
+
+# CORS_ALLOWED_ORIGINS = [
+#     'http://127.0.0.1:3000',
+# ]

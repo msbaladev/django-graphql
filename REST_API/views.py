@@ -65,9 +65,51 @@ def create_book(request):
         
         
        
+@api_view(['POST'])    
+def create_single_book(request):
+   
+    try:
+      if request.method == "POST":
+         title=request.data['name']
+         print(title)
+         
+         
+         data=icc(
+            category=title
+         )
+         data.save()
+         
+      return JsonResponse({"message":"created successfully"})
+    except Exception as error:
+      return JsonResponse({"message":str(error)})
+   
+ 
+
+@api_view(['GET']) 
+def get_single_book(request,id):
+  
+   try:
+     
+      data=icc.objects.filter(id=id).values()
+      print(data)
+      return JsonResponse({"data":list(data)})
+   except Exception as error:
+      return JsonResponse({"message":str(error)})
+   
+
+
+@api_view(['PUT'])
+def edit_book(request,id):
+   try:
+     if request.method == "PUT":
+        category=request.data['category']
+        print(request.data)
+        
+        data=icc.objects.filter(id=id).update(category=category)
+        return JsonResponse({"message":"updated successfully"})
        
-# def test():
-#     pass
+   except Exception as error:
+       return JsonResponse({"message":str(error)})
        
        
        
