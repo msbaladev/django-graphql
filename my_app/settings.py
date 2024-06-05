@@ -25,10 +25,9 @@ SECRET_KEY = 'django-insecure-5)%34kk5o@u*tv+tzd)=_^w-@(*@461+4+n*cfpa1p!5#1s(4$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-CORS_ALLOW_HEADERS = ['127.0.0.1']
+# CORS_ALLOW_HEADERS = ['0.0.0.0','http://localhost:3000']
 
-ALLOWED_HOSTS = ['django-graphql.onrender.com','127.0.0.1']
-
+ALLOWED_HOSTS = ['django-graphql.onrender.com', '127.0.0.1', 'localhost']
 
 
 AUTHENTICATION_BACKENDS = [
@@ -68,6 +67,7 @@ INSTALLED_APPS = [
 
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -77,7 +77,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
    
     'social_django.middleware.SocialAuthExceptionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+   
 ]
 
 
@@ -129,28 +129,28 @@ WSGI_APPLICATION = 'my_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'API',                      
-        'USER': 'postgres',
-        'PASSWORD': 'iness123',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
-
-
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'koyebdb',                      
-#         'USER': 'koyeb-adm',
-#         'PASSWORD': '13wqlOYPXprC',
-#         'HOST': 'ep-ancient-glade-a12qjarc.ap-southeast-1.pg.koyeb.app',
+#         'NAME': 'API',                      
+#         'USER': 'postgres',
+#         'PASSWORD': 'iness123',
+#         'HOST': 'localhost',
 #         'PORT': '5432',
 #     }
 # }
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'koyebdb',                      
+        'USER': 'koyeb-adm',
+        'PASSWORD': '13wqlOYPXprC',
+        'HOST': 'ep-ancient-glade-a12qjarc.ap-southeast-1.pg.koyeb.app',
+        'PORT': '5432',
+    }
+}
 
 
 
@@ -200,6 +200,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 # CORS_ALLOW_CREDENTIALS = False
 
 
-# CORS_ALLOWED_ORIGINS = [
-#     'http://127.0.0.1:3000',
-# ]
+CORS_ALLOWED_ORIGINS = [
+    'http://127.0.0.1:3000',
+    'http://localhost:3000'
+]

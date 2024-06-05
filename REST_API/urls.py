@@ -10,4 +10,5 @@ urlpatterns=[
     path('create_book',view=create_single_book,name="create_single_book"),
     path('single_book/<str:id>/',view=get_single_book,name="single_book"),
     path('edit_book/<str:id>/',view=edit_book,name="edit_book"),
+    path('delete_book/<str:id>/',view=delete_book,name="delete_book"),
 ]

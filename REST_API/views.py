@@ -115,5 +115,13 @@ def edit_book(request,id):
        
        
        
+@api_view(['DELETE'])  
+def delete_book(request,id):
+   try:
+      if request.method == 'DELETE':
+         data=icc.objects.filter(id=id).delete()
+         return JsonResponse({"message":"deleted successfully"})
+   except Exception as error:
+      return JsonResponse({"message":str(error)})
        
        
